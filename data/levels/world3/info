@@ -1,6 +1,6 @@
-(supertux-world
-  (title (_ "Tropical Paradise"))
-  (description "The third world of SuperTux.")
-  (hide-from-contribs #t)
-  (levelset #f)
+(supertux-level-subset
+  (title (_ "Tropical Island"))
+  (description (_ "World 3"))
+  (levelset #t)
+  (hide-from-contribs #f)
 )

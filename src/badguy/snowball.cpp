@@ -19,7 +19,7 @@
 #include "sprite/sprite.hpp"
 
 SnowBall::SnowBall(const ReaderMapping& reader)
-  : WalkingBadguy(reader, "images/creatures/snowball/snowball.sprite", "left", "right")
+  : WalkingBadguy(reader, "images/creatures/snowball/snow/snowball.sprite", "left", "right")
 {
   parse_type(reader);
 
@@ -49,7 +49,7 @@ SnowBall::get_default_sprite_name() const
   switch (m_type)
   {
     case BUMPKIN:
-      return "images/creatures/pumpkin/bumpkin.sprite";
+      return "images/creatures/bumpkin/bumpkin.sprite";
     case BSOD:
       return "images/creatures/bsod/bsod.sprite";
     default:

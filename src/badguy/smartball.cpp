@@ -42,7 +42,7 @@ SmartBall::get_default_sprite_name() const
   switch (m_type)
   {
     case PUMPKIN:
-      return "images/creatures/pumpkin/pumpkin.sprite";
+      return "images/creatures/kirby/kirby.sprite";
     default:
       return m_default_sprite_name;
   }

@@ -75,7 +75,7 @@ MrBomb::get_default_sprite_name() const
   switch (m_type)
   {
     case CLASSIC:
-      return "images/creatures/mr_bomb/old_bomb/old_bomb.sprite";
+      return "images/creatures/mr_bomb/old/mr_bomb.sprite";
     default:
       return m_default_sprite_name;
   }
