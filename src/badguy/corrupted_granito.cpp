@@ -165,15 +165,15 @@ CorruptedGranito::unfreeze(bool melt)
 bool
 CorruptedGranito::is_freezable() const
 {
-  return m_type != GRANITO;
+  return true;
 }
 
 GameObjectTypes
 CorruptedGranito::get_types() const
 {
   return {
-    { "granito", _("Skullyhop") },
-    { "skullyhop", _("Skullyhop 2") }
+    { "granito", _("No") },
+    { "skullyhop", _("Skullyhop") }
   };
 }
 

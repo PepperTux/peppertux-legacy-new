@@ -27,7 +27,7 @@ SnowBall::SnowBall(const ReaderMapping& reader)
 }
 
 SnowBall::SnowBall(const Vector& pos, Direction d, const std::string& script)
-  : WalkingBadguy(pos, d, "images/creatures/snowball/snowball.sprite", "left", "right")
+  : WalkingBadguy(pos, d, "images/creatures/snowball/snow/snowball.sprite", "left", "right")
 {
   walk_speed = 80;
   m_dead_script = script;
