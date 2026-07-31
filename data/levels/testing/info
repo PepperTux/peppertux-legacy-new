@@ -2,5 +2,8 @@
   (title (_ "Test and Concept Levels"))
   (description (_ "Testing stuff and concepts"))
   (levelset #t)
+  (contrib-type "official")
   (hide-from-contribs #f)
+  (title-level "")
+  (tuxdolls-required 0)
 )
