@@ -392,6 +392,14 @@
       (x 64)
       (y 736)
     )
+    (spawnpoint
+      (x 11712)
+      (y 896)
+    )
+    (spawnpoint
+      (x 14656)
+      (y 640)
+    )
     (spiky
       (z-pos 50)
       (direction "left")
@@ -444,8 +452,9 @@
     )
     (switch
       (z-pos 1)
-      (script "wind.start();")
-      (off-script "wind.stop();")
+      (script "wind.start();
+sign.fade(1, 1);")
+      (sprite "/images/objects/switch/left.sprite")
       (x 12364)
       (y 828)
     )
@@ -516,7 +525,16 @@
       (name "secret2")
       (width 575)
       (height 35)
-      (tiles -13692 0 10 11 -566 0 -3 2178 -4 0 3249 -3 11 -571 0 2126 -4 11 -570 0 2126 -5 11 -569 0 3253 -2 11 19 -6 11 -565 0 10 -11 11 -563 0 10 -12 11 -562 0 10 -7 11 19 -5 11 -562 0 -13 11 -562 0 19 -12 11 -564 0 -11 11 -565 0 -10 11 -94 0)
+      (tiles -13692 0 10 11 -573 0 3249 -3 11 -571 0 2126 -4 11 -570 0 2126 -5 11 -569 0 3253 -2 11 19 -6 11 -565 0 10 -11 11 -563 0 10 -12 11 -562 0 10 -7 11 19 -5 11 -562 0 -13 11 -562 0 19 -12 11 -564 0 -11 11 -565 0 -10 11 -94 0)
+    )
+    (tilemap
+      (solid #f)
+      (alpha 0)
+      (z-pos -101)
+      (name "sign")
+      (width 575)
+      (height 35)
+      (tiles -16472 0 1620 1621 -573 0 1622 1623 -3076 0)
     )
     (trampoline
       (type "stationary")
@@ -552,40 +570,29 @@
       (x 13920)
       (y 544)
     )
-    (unstable_tile
-      (z-pos 0)
-      (x 14912)
-      (y 704)
+    (weak_block
+      (version 2)
+      (z-pos 60)
+      (x 14944)
+      (y 768)
     )
-    (unstable_tile
-      (z-pos 0)
-      (x 14880)
-      (y 704)
+    (weak_block
+      (version 2)
+      (z-pos 60)
+      (x 14944)
+      (y 800)
     )
-    (unstable_tile
-      (z-pos 0)
-      (x 14848)
-      (y 704)
+    (weak_block
+      (version 2)
+      (z-pos 60)
+      (x 14944)
+      (y 832)
     )
-    (unstable_tile
-      (z-pos 0)
-      (x 14816)
-      (y 704)
-    )
-    (unstable_tile
-      (z-pos 0)
-      (x 14784)
-      (y 704)
-    )
-    (unstable_tile
-      (z-pos 0)
-      (x 14752)
-      (y 704)
-    )
-    (unstable_tile
-      (z-pos 0)
-      (x 14720)
-      (y 704)
+    (weak_block
+      (version 2)
+      (z-pos 60)
+      (x 14944)
+      (y 864)
     )
     (wind
       (z-pos -99)

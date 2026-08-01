@@ -82,6 +82,12 @@
       (y 1696)
       (glinting #f)
     )
+    (infoblock
+      (z-pos 51)
+      (message (_ "This level is planned to be replaced in the next update."))
+      (x 160)
+      (y 1792)
+    )
     (jumpy
       (z-pos 50)
       (x 3632)

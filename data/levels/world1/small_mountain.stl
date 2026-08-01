@@ -203,13 +203,6 @@
     (mriceblock
       (z-pos 50)
       (direction "left")
-      (x 7488)
-      (y 3392)
-      (glinting #f)
-    )
-    (mriceblock
-      (z-pos 50)
-      (direction "left")
       (x 7392)
       (y 3392)
       (glinting #f)
@@ -432,6 +425,12 @@
       (direction "left")
       (x 3968)
       (y 1664)
+      (glinting #f)
+    )
+    (smartblock
+      (z-pos 50)
+      (x 7488)
+      (y 3392)
       (glinting #f)
     )
     (snowball

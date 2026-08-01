@@ -331,13 +331,6 @@
     (mriceblock
       (z-pos 50)
       (direction "left")
-      (x 7872)
-      (y 1024)
-      (glinting #f)
-    )
-    (mriceblock
-      (z-pos 50)
-      (direction "left")
       (x 9888)
       (y 576)
       (glinting #f)
@@ -354,13 +347,6 @@
       (direction "left")
       (x 14912)
       (y 1728)
-      (glinting #f)
-    )
-    (mriceblock
-      (z-pos 50)
-      (direction "left")
-      (x 14656)
-      (y 1664)
       (glinting #f)
     )
     (music
@@ -507,10 +493,28 @@
       (y 608)
       (glinting #f)
     )
+    (smartball
+      (z-pos 50)
+      (x 7808)
+      (y 1024)
+      (glinting #f)
+    )
     (smartblock
       (z-pos 50)
       (direction "left")
       (x 1696)
+      (y 1664)
+      (glinting #f)
+    )
+    (smartblock
+      (z-pos 50)
+      (x 7872)
+      (y 1024)
+      (glinting #f)
+    )
+    (smartblock
+      (z-pos 50)
+      (x 14656)
       (y 1664)
       (glinting #f)
     )
@@ -533,13 +537,6 @@
       (direction "left")
       (x 5472)
       (y 1856)
-      (glinting #f)
-    )
-    (snowball
-      (z-pos 50)
-      (direction "left")
-      (x 7808)
-      (y 1024)
       (glinting #f)
     )
     (snowball
