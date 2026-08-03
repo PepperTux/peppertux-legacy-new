@@ -136,20 +136,6 @@
     (mriceblock
       (z-pos 50)
       (direction "left")
-      (x 6464)
-      (y 800)
-      (glinting #f)
-    )
-    (mriceblock
-      (z-pos 50)
-      (direction "left")
-      (x 13472)
-      (y 832)
-      (glinting #f)
-    )
-    (mriceblock
-      (z-pos 50)
-      (direction "left")
       (x 13824)
       (y 800)
       (glinting #f)
@@ -239,6 +225,12 @@
       (direction "left")
       (x 8576)
       (y 992)
+      (glinting #f)
+    )
+    (smartblock
+      (z-pos 50)
+      (x 13472)
+      (y 832)
       (glinting #f)
     )
     (snowball
@@ -333,13 +325,6 @@
     (spiky
       (z-pos 50)
       (direction "left")
-      (x 6400)
-      (y 800)
-      (glinting #f)
-    )
-    (spiky
-      (z-pos 50)
-      (direction "left")
       (x 6816)
       (y 768)
       (glinting #f)
@@ -406,6 +391,12 @@
       (x 4544)
       (y 832)
       (glinting #f)
+    )
+    (stalactite
+      (glinting #f)
+      (z-pos -1)
+      (x 13728)
+      (y 544)
     )
     (tilemap
       (solid #f)

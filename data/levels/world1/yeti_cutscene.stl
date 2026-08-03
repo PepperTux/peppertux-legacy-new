@@ -58,7 +58,7 @@ Text.fade_out(1);")
       (oneshot #t)
       (script "Yeti.set_action(\"walk-right\");
 play_sound(\"sounds/yeti_gna.wav\");
-Yeti.set_velocity(350, 0);")
+Yeti.set_velocity(400, 0);")
       (button #f)
       (width 32)
       (height 32)
@@ -67,7 +67,7 @@ Yeti.set_velocity(350, 0);")
     )
     (scripttrigger
       (oneshot #t)
-      (script "Tux.walk(50);
+      (script "Tux.walk(260);
 Tux.set_dir(false);
 Tux.do_jump(-128);")
       (button #f)
@@ -86,16 +86,8 @@ Level.finish(true);")
       (button #f)
       (width 32)
       (height 32)
-      (x 2688)
+      (x 2816)
       (y 960)
-    )
-    (scripttrigger
-      (script "Tux.do_jump(-320);")
-      (button #f)
-      (width 32)
-      (height 32)
-      (x 512)
-      (y 928)
     )
     (spawnpoint
       (name "main")

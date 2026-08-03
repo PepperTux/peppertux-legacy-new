@@ -105,13 +105,6 @@
       (y 672)
       (glinting #f)
     )
-    (mriceblock
-      (z-pos 50)
-      (direction "left")
-      (x 12320)
-      (y 832)
-      (glinting #f)
-    )
     (music
       (file "/music/antarctic/chipdisko.music")
     )
@@ -205,11 +198,23 @@
       (y 544)
       (glinting #f)
     )
+    (smartball
+      (z-pos 50)
+      (x 13088)
+      (y 960)
+      (glinting #f)
+    )
     (smartblock
       (z-pos 50)
       (direction "left")
       (x 6016)
       (y 608)
+      (glinting #f)
+    )
+    (smartblock
+      (z-pos 50)
+      (x 12320)
+      (y 832)
       (glinting #f)
     )
     (snowball

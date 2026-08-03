@@ -344,6 +344,7 @@
     (switch
       (z-pos 1)
       (script "platform.start_moving();")
+      (sprite "/images/objects/switch/left.sprite")
       (x 5612)
       (y 544)
     )
