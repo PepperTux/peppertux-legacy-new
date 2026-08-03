@@ -8,6 +8,34 @@
 
   (text
     (type "heading")
+    (string (_ "The PepperTux Developers and Contributors"))
+  )
+
+  (blank)
+
+  (person
+    (name "Vaesea")
+    (info (_ "Main Developer"))
+  )
+
+  (blank)
+
+  (person
+    (name "AnatolyStev")
+    (info (_ "Original Platforms In The Icy River"))
+  )
+
+  (blank)
+
+  (person
+    (name "FilipOK")
+    (info (_ "Art"))
+  )
+
+  (blank 11)
+
+  (text
+    (type "heading")
     (string (_ "The SuperTux Team"))
   )
   (blank)
