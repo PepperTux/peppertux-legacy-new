@@ -94,7 +94,7 @@ Menu::add_item(std::unique_ptr<MenuItem> new_item)
    * selectable item added.
    */
 
-  if (get_active_item() == -1 && !item.skippable())
+  if (get_active_item() == ACTIVE_ITEM_NONE && !item.skippable())
   {
     set_active_item(static_cast<int>(m_items.size()) - 1);
   }
@@ -423,7 +423,7 @@ Menu::process_action(const MenuAction& action)
 
   if (last_active_item != m_active_item) {
     // Selection caused by Up or Down keyboard action
-    if (last_active_item != -1)
+    if (last_active_item != ACTIVE_ITEM_NONE)
       m_items[last_active_item]->process_action(MenuAction::UNSELECT);
     m_items[m_active_item]->process_action(MenuAction::SELECT);
   }
@@ -671,8 +671,8 @@ Menu::event(const SDL_Event& ev)
            mouse_pos.x < m_pos.x + get_width() / 2.0f &&
            mouse_pos.y > m_pos.y - get_height() / 2.0f &&
            mouse_pos.y < m_pos.y + get_height() / 2.0f) ||
-		  m_mouse_deadzone > 0 ||
-		  m_can_click_when_unfocused)
+          m_mouse_deadzone > 0 ||
+          m_can_click_when_unfocused)
       {
         process_action(MenuAction::HIT);
       }
@@ -681,16 +681,16 @@ Menu::event(const SDL_Event& ev)
 
     case SDL_EVENT_MOUSE_MOTION:
     {
-	  if (m_mouse_deadzone > 0)
-	  {
-	  	m_mouse_deadzone -= abs(ev.motion.xrel);
-	  	m_mouse_deadzone -= abs(ev.motion.yrel);
+      if (m_mouse_deadzone > 0)
+      {
+        m_mouse_deadzone -= abs(ev.motion.xrel);
+        m_mouse_deadzone -= abs(ev.motion.yrel);
 
-      if (m_mouse_deadzone < 0)
-        m_mouse_deadzone = 0;
+        if (m_mouse_deadzone < 0)
+          m_mouse_deadzone = 0;
 
-		  return;
-	  }
+        return;
+      }
       Vector mouse_pos = VideoSystem::current()->get_viewport().to_logical(ev.motion.x, ev.motion.y);
       float x = mouse_pos.x;
       float y = mouse_pos.y;
@@ -740,10 +740,30 @@ Menu::event(const SDL_Event& ev)
 void
 Menu::set_active_item_id(int id)
 {
-  for (size_t i = 0; i < m_items.size(); ++i) {
-    if (m_items[i]->get_id() == id) {
+  for (size_t i = 0; i < m_items.size(); ++i)
+  {
+    if (m_items[i]->get_id() == id)
+    {
       set_active_item(static_cast<int>(i));
       break;
     }
+  }
+}
+
+void
+Menu::set_active_item(int item_idx)
+{
+  if (item_idx == m_active_item)
+    return;
+
+  if (m_active_item > -1)
+  {
+    process_action(MenuAction::UNSELECT);
+  }
+
+  m_active_item = item_idx;
+  if (m_active_item > -1)
+  {
+    process_action(MenuAction::SELECT);
   }
 }
