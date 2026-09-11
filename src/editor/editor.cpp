@@ -230,7 +230,6 @@ Editor::draw(Compositor& compositor)
       widget->draw(context);
     }
 
-    m_toolbar_widget->draw(context);
     m_overlay_widget->draw_tilemap_outer_shading(context);
     m_overlay_widget->draw_tilemap_border(context);
 
@@ -303,11 +302,7 @@ Editor::draw(Compositor& compositor)
     constexpr float LINE_THICKNESS = 1.f;
     Rectf border_rect = Rectf{SCREEN_WIDTH - 128.f - LINE_THICKNESS, 0,
                               SCREEN_WIDTH - 128.f, static_cast<float>(SCREEN_HEIGHT - 32.f)};
-    Color line_color = g_config->editorcolor;
-    line_color.red -= 0.2;
-    line_color.green -= 0.2;
-    line_color.blue -= 0.2;
-    line_color.alpha -= 0.2;
+    Color line_color = (g_config->editorcolor - Color(0.2, 0.2, 0.2, 0.2)).validate();
     context.color().draw_filled_rect(border_rect, line_color, LAYER_GUI + 1);
 
     Rectf shadow_rect = border_rect;
@@ -619,46 +614,49 @@ Editor::test_level(const std::optional<std::pair<std::string, Vector>>& test_pos
     return;
   }
 
-  Tile::draw_editor_images = false;
-  Compositor::s_render_lighting = true;
-
-  std::unique_ptr<World> owned_world;
-  World* current_world = m_world.get();
-
-  if (!g_config->max_viewport && g_config->editor_max_viewport)
-    VideoSystem::current()->get_viewport().force_full_viewport(false);
-
-  m_leveltested = true;
-  if ((m_level && !current_world) || m_levelfile == "")
+  check_save_prerequisites([this, test_pos]()
   {
-    GameManager::current()->start_level(m_level.get(), test_pos, true);
-    return;
-  }
+    Tile::draw_editor_images = false;
+    Compositor::s_render_lighting = true;
 
-  std::string backup_filename = get_autosave_from_levelname(m_levelfile);
-  std::string directory = get_level_directory();
+    std::unique_ptr<World> owned_world;
+    World* current_world = m_world.get();
 
-  // This is jank to get an owned World pointer, GameManager/World
-  // could probably need a refactor to handle this better.
-  if (!current_world) {
-    owned_world = World::from_directory(directory);
-    current_world = owned_world.get();
-  }
+    if (!g_config->max_viewport && g_config->editor_max_viewport)
+      VideoSystem::current()->get_viewport().force_full_viewport(false);
 
-  m_autosave_levelfile = FileSystem::join(directory, backup_filename);
-  m_level->save(m_autosave_levelfile);
-  m_time_since_last_save = 0.f;
+    m_leveltested = true;
+    if ((m_level && !current_world) || m_levelfile == "")
+    {
+      GameManager::current()->start_level(m_level.get(), test_pos, true);
+      return;
+    }
 
-  if (!m_level->is_worldmap())
-  {
-    // TODO: After LevelSetScreen is removed, this should return a boolean indicating whether load was successful.
-    //       If not, call reactivate().
-    GameManager::current()->start_level(*current_world, backup_filename, test_pos, true);
-  }
-  else if (!GameManager::current()->start_worldmap(*current_world, m_autosave_levelfile, test_pos))
-  {
-    reactivate();
-  }
+    std::string backup_filename = get_autosave_from_levelname(m_levelfile);
+    std::string directory = get_level_directory();
+
+    // This is jank to get an owned World pointer, GameManager/World
+    // could probably need a refactor to handle this better.
+    if (!current_world) {
+      owned_world = World::from_directory(directory);
+      current_world = owned_world.get();
+    }
+
+    m_autosave_levelfile = FileSystem::join(directory, backup_filename);
+    m_level->save(m_autosave_levelfile);
+    m_time_since_last_save = 0.f;
+
+    if (!m_level->is_worldmap())
+    {
+      // TODO: After LevelSetScreen is removed, this should return a boolean indicating whether load was successful.
+      //       If not, call reactivate().
+      GameManager::current()->start_level(*current_world, backup_filename, test_pos, true);
+    }
+    else if (!GameManager::current()->start_worldmap(*current_world, m_autosave_levelfile, test_pos))
+    {
+      reactivate();
+    }
+  });
 }
 
 void
