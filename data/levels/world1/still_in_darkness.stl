@@ -124,13 +124,6 @@
     (mriceblock
       (z-pos 50)
       (direction "left")
-      (x 8896)
-      (y 416)
-      (glinting #f)
-    )
-    (mriceblock
-      (z-pos 50)
-      (direction "left")
       (x 1152)
       (y 1120)
       (glinting #f)
@@ -161,6 +154,13 @@
       (direction "left")
       (x 5440)
       (y 832)
+      (glinting #f)
+    )
+    (mriceblock
+      (z-pos 50)
+      (direction "left")
+      (x 8896)
+      (y 416)
       (glinting #f)
     )
     (music
@@ -679,6 +679,7 @@ platform7.start_moving();")
     (switch
       (z-pos 1)
       (script "platform2.start_moving();")
+      (sprite "/images/objects/switch/left.sprite")
       (x 8012)
       (y 736)
     )

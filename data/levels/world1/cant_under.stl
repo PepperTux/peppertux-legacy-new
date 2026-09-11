@@ -193,13 +193,6 @@
     (mriceblock
       (z-pos 50)
       (direction "left")
-      (x 992)
-      (y 864)
-      (glinting #f)
-    )
-    (mriceblock
-      (z-pos 50)
-      (direction "left")
       (x 5408)
       (y 768)
       (glinting #f)
@@ -323,6 +316,12 @@
       (direction "left")
       (x 8832)
       (y 576)
+      (glinting #f)
+    )
+    (smartblock
+      (z-pos 50)
+      (x 992)
+      (y 864)
       (glinting #f)
     )
     (spawnpoint

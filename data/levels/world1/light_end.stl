@@ -179,13 +179,6 @@
     (mriceblock
       (z-pos 50)
       (direction "left")
-      (x 2560)
-      (y 736)
-      (glinting #f)
-    )
-    (mriceblock
-      (z-pos 50)
-      (direction "left")
       (x 6592)
       (y 864)
       (glinting #f)
@@ -249,6 +242,7 @@
       (running #f)
       (name "platform")
       (path-ref "gen17673891272890620760000")
+      (sprite "/images/objects/platforms/icefloe_small.sprite")
     )
     (secretarea
       (fade-tilemap "secret")
@@ -311,6 +305,12 @@
       (direction "left")
       (x 2912)
       (y 608)
+      (glinting #f)
+    )
+    (smartblock
+      (z-pos 50)
+      (x 2560)
+      (y 736)
       (glinting #f)
     )
     (snowball

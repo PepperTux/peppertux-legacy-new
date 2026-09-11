@@ -246,6 +246,12 @@
       (y 576)
       (glinting #f)
     )
+    (smartball
+      (z-pos 50)
+      (x 4384)
+      (y 2400)
+      (glinting #f)
+    )
     (smartblock
       (z-pos 50)
       (direction "left")
@@ -286,13 +292,6 @@
       (direction "left")
       (x 3200)
       (y 2656)
-      (glinting #f)
-    )
-    (snowball
-      (z-pos 50)
-      (direction "left")
-      (x 4384)
-      (y 2400)
       (glinting #f)
     )
     (snowball
