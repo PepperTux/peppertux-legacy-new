@@ -285,6 +285,11 @@
       (y 800)
       (glinting #f)
     )
+    (gradient
+      (top_color 0.5 0.7 1)
+      (bottom_color 1 1 1)
+      (z-pos -301)
+    )
     (haywire
       (z-pos 50)
       (direction "left")

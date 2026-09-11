@@ -16,15 +16,6 @@
     (ambient-light
       (color 1 1 1)
     )
-    (background
-      (scroll-offset-x 846)
-      (scroll-offset-y 378)
-      (color 1 1 1)
-      (speed 0.25)
-      (image-top "/images/background/arctis_top.jpg")
-      (image "/images/background/arctis_top.jpg")
-      (image-bottom "/images/background/arctis_top.jpg")
-    )
     (bouncingsnowball
       (z-pos 50)
       (direction "left")
@@ -64,6 +55,11 @@
       (x 4032)
       (y 320)
       (glinting #f)
+    )
+    (gradient
+      (top_color 0.5 0.7 1)
+      (bottom_color 1 1 1)
+      (z-pos -301)
     )
     (mrbomb
       (z-pos 50)

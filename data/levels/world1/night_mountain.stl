@@ -66,6 +66,11 @@
       (x 6528)
       (y 1632)
     )
+    (gradient
+      (top_color 0.5 0.7 1)
+      (bottom_color 1 1 1)
+      (z-pos -301)
+    )
     (jumpy
       (z-pos 50)
       (x 1152)

@@ -46,6 +46,11 @@ Tux.walk(320);")
       (x 1568)
       (y 512)
     )
+    (gradient
+      (top_color 0.5 0.7 1)
+      (bottom_color 1 1 1)
+      (z-pos -301)
+    )
     (music
       (file "/music/misc/intro.music")
     )

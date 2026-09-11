@@ -33,6 +33,11 @@ Text.fade_out(1);")
       (name "Camera")
       (mode "normal")
     )
+    (gradient
+      (top_color 0.5 0.7 1)
+      (bottom_color 1 1 1)
+      (z-pos -301)
+    )
     (music
       (file "/music/voc-dark.music")
     )

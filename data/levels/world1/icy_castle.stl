@@ -171,6 +171,11 @@ play_sound(\"sounds/iceblock_bump.wav\");")
       (y 768)
       (glinting #t)
     )
+    (gradient
+      (top_color 0.5 0.7 1)
+      (bottom_color 1 1 1)
+      (z-pos -301)
+    )
     (jumpy
       (z-pos 50)
       (x 5456)
