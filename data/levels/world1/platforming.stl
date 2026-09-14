@@ -37,13 +37,6 @@
       (x 4288)
       (y 128)
     )
-    (bouncingsnowball
-      (z-pos 50)
-      (direction "left")
-      (x 6336)
-      (y 736)
-      (glinting #f)
-    )
     (camera
       (name "Camera")
       (mode "normal")
@@ -90,12 +83,6 @@
     )
     (jumpy
       (z-pos 50)
-      (x 976)
-      (y 192)
-      (glinting #f)
-    )
-    (jumpy
-      (z-pos 50)
       (x 2064)
       (y 768)
       (glinting #f)
@@ -108,20 +95,14 @@
     )
     (jumpy
       (z-pos 50)
-      (x 5632)
-      (y 288)
+      (x 3072)
+      (y 160)
       (glinting #f)
     )
     (jumpy
       (z-pos 50)
       (x 5216)
       (y 256)
-      (glinting #f)
-    )
-    (jumpy
-      (z-pos 50)
-      (x 3072)
-      (y 160)
       (glinting #f)
     )
     (mriceblock
@@ -231,13 +212,6 @@
     (smartball
       (z-pos 50)
       (direction "left")
-      (x 1728)
-      (y 256)
-      (glinting #f)
-    )
-    (smartball
-      (z-pos 50)
-      (direction "left")
       (x 352)
       (y 256)
       (glinting #f)
@@ -246,13 +220,6 @@
       (z-pos 50)
       (direction "left")
       (x 4768)
-      (y 704)
-      (glinting #f)
-    )
-    (smartball
-      (z-pos 50)
-      (direction "left")
-      (x 5600)
       (y 704)
       (glinting #f)
     )
@@ -275,13 +242,6 @@
       (direction "left")
       (x 4384)
       (y 224)
-      (glinting #f)
-    )
-    (snowball
-      (z-pos 50)
-      (direction "left")
-      (x 1504)
-      (y 896)
       (glinting #f)
     )
     (snowball
