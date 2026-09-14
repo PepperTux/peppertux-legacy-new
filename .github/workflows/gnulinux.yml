@@ -33,7 +33,7 @@ jobs:
         # TODO Working Linux 32-bit packaging
         # TODO CTest & coverage workflow implement
         arch: [32, 64]
-        os: [ubuntu-26.04]
+        os: [ubuntu-22.04]
         compiler: [gcc, clang]
         build_type: [Debug, Release]
         include:
