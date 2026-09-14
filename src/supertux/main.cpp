@@ -305,7 +305,7 @@ void PhysfsSubsystem::find_mount_userdir()
   }
   else
   {
-    m_userdir = PHYSFS_getPrefDir("SuperTux","supertux2");
+    m_userdir = PHYSFS_getPrefDir("PepperTux","peppertux");
   }
 //Kept for backwards-compatability only, hence the silence
 #ifdef __GNUC__
@@ -325,7 +325,7 @@ std::string olduserdir;
 // Extra safety check to ensure we can't move home.
 // See: https://bugs.gentoo.org/764959
 if (std::string(PACKAGE_NAME) == "")
-  olduserdir = FileSystem::join(physfs_userdir, ".supertux2");
+  olduserdir = FileSystem::join(physfs_userdir, ".peppertux2");
 else
   olduserdir = FileSystem::join(physfs_userdir, "." PACKAGE_NAME);
 #endif
@@ -367,7 +367,7 @@ if (FileSystem::is_directory(olduserdir)) {
 #endif
 
 #ifdef __EMSCRIPTEN__
-  m_userdir = "/home/web_user/.local/share/supertux2/";
+  m_userdir = "/home/web_user/.local/share/peppertux2/";
 #endif
 
   if (!FileSystem::is_directory(m_userdir))
@@ -732,7 +732,7 @@ Main::run(int argc, char** argv)
 #ifdef WIN32
 	//SDL is used instead of PHYSFS because both create the same path in app data
 	//However, PHYSFS is not yet initizlized, and this should be run before anything is initialized
-	std::string prefpath = SDL_GetPrefPath("SuperTux", "supertux2");
+	std::string prefpath = SDL_GetPrefPath("PepperTux", "peppertux");
 
 	std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
 
