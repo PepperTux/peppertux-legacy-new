@@ -19,7 +19,7 @@
   (action
     (hitbox 20 23 42 62)
     (name "iced-left")
-    (images "small-left-1.png")
+    (images "small-frozen.png")
   )
   (action
     (hitbox 20 23 42 62)

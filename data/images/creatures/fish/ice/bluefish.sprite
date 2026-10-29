@@ -13,7 +13,7 @@
   (action
     (name "iced-left")
     (hitbox 3 4 32 30)
-    (images "left-0.png"))
+    (images "iced-left.png"))
 
   (action
     (name "iced-right")
