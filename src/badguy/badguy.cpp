@@ -204,16 +204,9 @@ BadGuy::draw(DrawingContext& context)
       if (m_unfreeze_timer.started() && m_unfreeze_timer.get_timeleft() <= 1.f)
       {
         m_sprite->draw(context.color(), draw_pos + Vector(graphicsRandom.randf(-3, 3), 0.f), m_layer - 1, m_flip);
-        if (is_portable())
-          m_freezesprite->draw(context.color(), draw_pos + Vector(graphicsRandom.randf(-3, 3), 0.f), m_layer);
       }
       else
       {
-        if (m_frozen && is_portable())
-        {
-          m_freezesprite->draw(context.color(), draw_pos, m_layer);
-        }
-
         if (m_state != STATE_BURNING || m_firesprite->get_current_frame() < 5)
           m_sprite->draw(context.color(), draw_pos, m_layer - (m_frozen ? 1 : 0), m_flip);
       }
