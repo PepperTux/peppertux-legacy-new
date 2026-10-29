@@ -1185,7 +1185,7 @@ BadGuy::ungrab(MovingObject& object, Direction dir_)
 bool
 BadGuy::is_portable() const
 {
-  return m_frozen;
+  return false;
 }
 
 void
