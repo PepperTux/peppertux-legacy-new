@@ -204,16 +204,9 @@ BadGuy::draw(DrawingContext& context)
       if (m_unfreeze_timer.started() && m_unfreeze_timer.get_timeleft() <= 1.f)
       {
         m_sprite->draw(context.color(), draw_pos + Vector(graphicsRandom.randf(-3, 3), 0.f), m_layer - 1, m_flip);
-        if (is_portable())
-          m_freezesprite->draw(context.color(), draw_pos + Vector(graphicsRandom.randf(-3, 3), 0.f), m_layer);
       }
       else
       {
-        if (m_frozen && is_portable())
-        {
-          m_freezesprite->draw(context.color(), draw_pos, m_layer);
-        }
-
         if (m_state != STATE_BURNING || m_firesprite->get_current_frame() < 5)
           m_sprite->draw(context.color(), draw_pos, m_layer - (m_frozen ? 1 : 0), m_flip);
       }
@@ -1185,7 +1178,7 @@ BadGuy::ungrab(MovingObject& object, Direction dir_)
 bool
 BadGuy::is_portable() const
 {
-  return m_frozen;
+  return false;
 }
 
 void
@@ -1195,19 +1188,6 @@ BadGuy::freeze()
   m_unfreeze_timer.start(8.f);
   set_colgroup_active(COLGROUP_MOVING_STATIC);
   SoundManager::current()->play("sounds/sizzle.ogg", get_pos());
-
-  float freezesize_x =
-    get_overlay_size() == "3x3" ? 96.f :
-    get_overlay_size() == "2x2" ? 64.f :
-    get_overlay_size() == "2x1" ? 64.f : 45.f;
-
-  float freezesize_y =
-    get_overlay_size() == "3x3" ? 94.f :
-    get_overlay_size() == "2x2" ? 62.f :
-    get_overlay_size() == "2x1" ? 43.f :
-    get_overlay_size() == "1x2" ? 62.f : 43.f;
-
-  set_pos(Vector(get_bbox().get_left(), get_bbox().get_bottom() - freezesize_y));
 
   if (m_sprite->has_action("iced-left"))
     set_action("iced", m_dir, 1);
@@ -1223,7 +1203,6 @@ BadGuy::freeze()
       m_sprite->stop_animation();
     }
   }
-  m_col.set_size(freezesize_x, freezesize_y);
 }
 
 void
@@ -1238,7 +1217,6 @@ BadGuy::unfreeze(bool melt)
   }
   m_frozen = false;
   m_unfreeze_timer.stop();
-  m_col.set_size(m_sprite->get_current_hitbox_width(), m_sprite->get_current_hitbox_height());
 
   SoundManager::current()->play(melt ? "sounds/splash.ogg" : "sounds/brick.wav", get_pos());
   Vector pr_pos(0.0f, 0.0f);

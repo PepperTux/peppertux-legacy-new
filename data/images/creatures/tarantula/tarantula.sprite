@@ -37,4 +37,9 @@
 	(hitbox 14 19 37 43)
     (images "spidermite-squish.png")
   )
+  (action
+    (name "iced")
+    (hitbox 14 14 37 43)
+    (images "spidermite-frozen.png")
+  )
 )

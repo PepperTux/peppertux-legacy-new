@@ -34,12 +34,12 @@
 
   (action
     (name "iced-left")
-    (hitbox 0 0 64 64)
-    (images "dopefish.png"))
+    (hitbox 2 14 38 30)
+    (images "dopefish-frozen.png"))
 
   (action
     (name "iced-right")
-    (hitbox 0 0 64 64)
+    (hitbox 15 14 38 30)
     (mirror-action "iced-left"))
 
 )

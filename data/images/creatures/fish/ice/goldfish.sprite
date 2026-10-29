@@ -11,12 +11,12 @@
 
   (action
     (name "iced-left")
-    (hitbox 4 4 32 32)
-    (images "orangefish.png"))
+    (hitbox 2 2 21 20)
+    (images "orangefish-frozen.png"))
 
   (action
     (name "iced-right")
-    (hitbox 4 4 32 32)
+    (hitbox 2 2 21 20)
     (mirror-action "iced-left"))
 
 )

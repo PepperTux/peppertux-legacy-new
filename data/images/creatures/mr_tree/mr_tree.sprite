@@ -14,7 +14,7 @@
   (action
     (hitbox 0 -2 84.8 84.8)
     (name "iced-left")
-    (images "walk-left-2.png")
+    (images "walk-frozen.png")
   )
   (action
     (hitbox 0 -2 84.8 84.8)
