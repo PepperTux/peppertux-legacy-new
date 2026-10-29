@@ -1189,19 +1189,6 @@ BadGuy::freeze()
   set_colgroup_active(COLGROUP_MOVING_STATIC);
   SoundManager::current()->play("sounds/sizzle.ogg", get_pos());
 
-  float freezesize_x =
-    get_overlay_size() == "3x3" ? 96.f :
-    get_overlay_size() == "2x2" ? 64.f :
-    get_overlay_size() == "2x1" ? 64.f : 45.f;
-
-  float freezesize_y =
-    get_overlay_size() == "3x3" ? 94.f :
-    get_overlay_size() == "2x2" ? 62.f :
-    get_overlay_size() == "2x1" ? 43.f :
-    get_overlay_size() == "1x2" ? 62.f : 43.f;
-
-  set_pos(Vector(get_bbox().get_left(), get_bbox().get_bottom() - freezesize_y));
-
   if (m_sprite->has_action("iced-left"))
     set_action("iced", m_dir, 1);
   // When the sprite doesn't have separate actions for left and right, it tries to use an universal one.
@@ -1216,7 +1203,6 @@ BadGuy::freeze()
       m_sprite->stop_animation();
     }
   }
-  m_col.set_size(freezesize_x, freezesize_y);
 }
 
 void
@@ -1231,7 +1217,6 @@ BadGuy::unfreeze(bool melt)
   }
   m_frozen = false;
   m_unfreeze_timer.stop();
-  m_col.set_size(m_sprite->get_current_hitbox_width(), m_sprite->get_current_hitbox_height());
 
   SoundManager::current()->play(melt ? "sounds/splash.ogg" : "sounds/brick.wav", get_pos());
   Vector pr_pos(0.0f, 0.0f);
