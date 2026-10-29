@@ -138,7 +138,7 @@ ViciousIvy::active_update(float dt_sec)
 void
 ViciousIvy::collision_solid(const CollisionHit& hit)
 {
-  if (is_active() && hit.bottom)
+  if (is_active() && hit.bottom && !m_frozen)
     set_action(m_dir);
 
   WalkingBadguy::collision_solid(hit);
