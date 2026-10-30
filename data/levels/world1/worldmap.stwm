@@ -86,7 +86,7 @@
     )
     (level
       (z-pos 50)
-      (level "good_morning.stl")
+      (level "sliding_snow.stl")
       (x 46)
       (y 11)
     )
