@@ -10,8 +10,8 @@ if(WIN32 AND NOT UNIX)
             OPTIONAL)
   endif()
 
-  install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/mk/msvc/run_supertux.bat
-                ${CMAKE_CURRENT_SOURCE_DIR}/mk/msvc/run_supertux_portable.bat
+  install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/mk/msvc/run_peppertux.bat
+                ${CMAKE_CURRENT_SOURCE_DIR}/mk/msvc/run_peppertux_portable.bat
           DESTINATION ".")
 
   option(PACKAGE_VCREDIST "Package the VCREDIST libraries with the program" OFF)
