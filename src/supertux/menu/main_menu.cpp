@@ -82,13 +82,13 @@ MainMenu::MainMenu()
   {
     s_shown_initial_dialogs = true;
 #ifdef NETWORKING
-    Dialog::show_confirmation(_("Would you allow SuperTux to connect to the Internet?\n\nThis enables additional features, such as the in-game add-on catalog."),
+    Dialog::show_confirmation(_("Would you allow PepperTux to connect to the Internet?\n\nThis enables additional features, such as the in-game add-on catalog."),
       []()
       {
         g_config->disable_network = false;
 
 # ifndef __EMSCRIPTEN__
-        Dialog::show_confirmation(_("Would you allow SuperTux to check for new releases on startup?\n\nYou will be notified if any are found."),
+        Dialog::show_confirmation(_("Would you allow PepperTux to check for new releases on startup?\n\nYou will be notified if any are found."),
           []()
           {
             g_config->do_release_check = true;
