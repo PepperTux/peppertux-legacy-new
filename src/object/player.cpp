@@ -818,13 +818,6 @@ Player::update(float dt_sec)
     }
   }
 
-  if (m_floor_normal.y < 0.f && m_crawl && !m_stone)
-  {
-    m_crawl = false;
-    m_sliding = true;
-    m_was_crawling_before_slide = true;
-  }
-
   //sliding
 
   if (m_sliding)
@@ -1234,11 +1227,6 @@ Player::handle_horizontal_input()
       m_stone = true;
       m_does_buttjump = false;
     }
-    m_sliding = true;
-    // silly nonsense; tuxs "unslides" back into tall tux if he's large and his
-    // action 'clips' through the ground. Don't blame me, i hate this file.
-    if (is_big())
-      m_duck = true;
   }
 
   if (m_crawl && on_ground() && std::abs(m_physic.get_velocity_x()) < WALK_SPEED)
@@ -1792,15 +1780,6 @@ Player::handle_input()
 
   if (m_sliding)
   {
-    adjust_height(DUCKED_TUX_HEIGHT);
-    slide();
-  }
-  else if (!m_sliding && (m_coyote_timer.started()) && !m_skidding_timer.started() &&
-    (m_floor_normal.y != 0 || (m_controller->hold(Control::LEFT) || m_controller->hold(Control::RIGHT)))
-    && m_controller->pressed(Control::DOWN) && std::abs(m_physic.get_velocity_x()) > 1.f &&
-    get_bonus()!= BONUS_EARTH)
-  {
-    sideways_push(m_dir == Direction::LEFT ? -100.f : 100.f);
     adjust_height(DUCKED_TUX_HEIGHT);
     slide();
   }
