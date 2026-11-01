@@ -885,8 +885,6 @@ Player::update(float dt_sec)
     }
     else if (m_floor_normal.y == 0.f && std::abs(m_physic.get_velocity_x()) <= 1.f)
     {
-      if (is_big() || m_growing)
-          m_crawl = true;
       m_sliding = false;
       m_slidejumping = false;
     }
@@ -1215,10 +1213,6 @@ Player::handle_horizontal_input()
     }
   }
 
-  if (m_duck && (m_controller->hold(Control::LEFT) || m_controller->hold(Control::RIGHT))) {
-    m_crawl = true;
-  }
-
   // player on slope -> duck? start sliding.
   if (m_controller->hold(Control::DOWN) && on_ground() && m_floor_normal.y != 0)
   {
@@ -1378,7 +1372,6 @@ Player::do_standup(bool force_standup)
   new_bbox.set_height(new_height);
   if (!Sector::get().is_free_of_movingstatics(new_bbox, this, true) && !force_standup)
   {
-    m_crawl = true;
     return;
   }
 
