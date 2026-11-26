@@ -20,6 +20,7 @@ FishHarmless::FishHarmless(const ReaderMapping& reader) :
   FishSwimming(reader, "images/creatures/fish/ice/goldfish.sprite")
 {
   m_can_glint = false;
+  m_water_affected = true;
 }
 
 void
