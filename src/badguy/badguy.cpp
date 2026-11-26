@@ -82,7 +82,7 @@ BadGuy::BadGuy(const Vector& pos, Direction direction, const std::string& sprite
   m_freezesprite(SpriteManager::current()->create(ice_sprite_name)),
   m_firesprite(SpriteManager::current()->create(fire_sprite_name)),
   m_glowing(false),
-  m_water_affected(true),
+  m_water_affected(false),
   m_unfreeze_timer(),
   m_floor_normal(0.0f, 0.0f),
   m_detected_slope(0),
@@ -139,7 +139,7 @@ BadGuy::BadGuy(const ReaderMapping& reader, const std::string& sprite_name,
   m_freezesprite(SpriteManager::current()->create(ice_sprite_name)),
   m_firesprite(SpriteManager::current()->create(fire_sprite_name)),
   m_glowing(false),
-  m_water_affected(true),
+  m_water_affected(false),
   m_unfreeze_timer(),
   m_floor_normal(0.0f, 0.0f),
   m_detected_slope(0),
@@ -288,10 +288,10 @@ BadGuy::update(float dt_sec)
   bool in_water_bigger = !Sector::get().is_free_of_tiles(get_bbox().grown(-4.f), true, Tile::WATER); // *supposedly* prevents a weird sound glitch
 
   if (m_physic.gravity_enabled()) {
-    m_physic.set_gravity_modifier(middle_has_water ? m_frozen ? -1.f : 0.3f : 1.f);
+    m_physic.set_gravity_modifier(m_water_affected && middle_has_water ? (m_frozen ? -1.f : 0.3f) : -1.f);
   }
 
-  if (in_water_bigger && m_frozen && !is_grabbed())
+  if (m_water_affected && in_water_bigger && m_frozen && !is_grabbed())
   {
     // x movement
     if ((m_physic.get_velocity_x() > -2.0f) && (m_physic.get_velocity_x() < 2.0f))
