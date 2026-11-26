@@ -271,17 +271,7 @@ HeavyCoin::HeavyCoin(const ReaderMapping& reader, bool count_stats) :
 void
 HeavyCoin::update(float dt_sec)
 {
-  // Water physics: reduce gravity so the coin sinks slowly, and cap
-  // downward velocity so coins that enter water at high speed don't
-  // punch straight to the bottom.  Values chosen to visually match
-  // the floaty feel of BadGuy water physics (see badguy.cpp).
-  static const float WATER_GRAVITY_MODIFIER = 0.1f;
-  static const float WATER_MAX_DROP_SPEED = 100.f;
-
-  bool in_water = !Sector::get().is_free_of_tiles(get_bbox(), true, Tile::WATER);
-  m_physic.set_gravity_modifier(in_water ? WATER_GRAVITY_MODIFIER : 1.f);
-  if (in_water)
-    m_physic.set_velocity_y(std::min(m_physic.get_velocity_y(), WATER_MAX_DROP_SPEED));
+  m_physic.set_gravity_modifier(1.0f);
   m_col.set_movement(m_physic.get_movement(dt_sec));
 }
 
