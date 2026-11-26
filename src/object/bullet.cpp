@@ -112,10 +112,9 @@ Bullet::update(float dt_sec)
     remove_me();
     return;
   }
-
-  bool in_water = !Sector::get().is_free_of_tiles(get_bbox(), true, Tile::WATER);
-  physic.set_gravity_modifier(in_water ? 0.3f : 1.f);
-  m_col.set_movement(physic.get_movement(dt_sec) * (in_water && m_waterlogged ? 0.5f : 1.f));
+  
+  physic.set_gravity_modifier(1.0f);
+  m_col.set_movement(physic.get_movement(dt_sec));
 }
 
 void
