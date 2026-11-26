@@ -246,7 +246,7 @@ Coin::collision(MovingObject& other, const CollisionHit& )
   return ABORT_MOVE;
 }
 
-/* The following defines a coin subject to gravity. */
+/* The following defines a coin subject to gravity */
 HeavyCoin::HeavyCoin(const Vector& pos, const Vector& init_velocity, bool count_stats, const std::string& sprite_path) :
   Coin(pos, count_stats, sprite_path),
   m_physic(),
