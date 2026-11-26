@@ -43,6 +43,8 @@ FishChasing::FishChasing(const ReaderMapping& reader) :
   reader.get("track-distance", m_track_distance, TRACK_DISTANCE);
   reader.get("lost-distance", m_lost_distance, LOST_DISTANCE);
   reader.get("chase-speed", m_chase_speed, CHASE_SPEED);
+
+  m_water_affected = true;
 }
 
 std::string
